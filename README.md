@@ -1,6 +1,8 @@
 # Pi-VAX
 Compute Pi to an arbitrary number of digits using VAX FORTRAN.  Why, you ask?  Why not?
 
+The program uses Machin's series for computation of pi.  See https://en.wikipedia.org/wiki/John_Machin for details.
+
 Set DIGITS in the source file PI.FOR to the number of digits desired.  
 
 To compile/link under VMS:
