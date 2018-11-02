@@ -5,12 +5,16 @@ Set DIGITS in the source file PI.FOR to the number of digits desired.
 
 To compile/link under VMS:
 
-  $ FORTRAN/LIS PI.FOR
-  $ LINK PI
+```
+$ FORTRAN/LIS PI.FOR
+$ LINK PI
+```
 
 And to run it, just:
 
+```
 $ RUN PI
+```
 
 Be prepared to wait quite a while for a largr number of digits.  100,000 digits takes about 
 8 hours on a newer (circa 1995) MicroVAX 3100/80.
@@ -18,5 +22,3 @@ Be prepared to wait quite a while for a largr number of digits.  100,000 digits 
 This is a FORTRAN port of an older program I wrote for this purpose in PL/I.
 
 K. McQuiggin
-mcquiggi@sfu.ca
-
