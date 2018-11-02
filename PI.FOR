@@ -14,11 +14,11 @@ C     MODIFICATION OF ORIGINAL PL/I PROGRAM
       INTEGER*4 A(100000)
       COMMON SIZE 
 
-C	  ***********************************************************
-C	  * SETUP - SET DESIRED NUMBER OF DIGITS                    *
-C         *                                                         *
-C         * SET 'DIGITS' TO THE DESIRED NUMBER OF DIGITS OF PI      *
-C	  ***********************************************************
+C     ***********************************************************
+C     * SETUP - SET DESIRED NUMBER OF DIGITS                    *
+C     *                                                         *
+C     * SET 'DIGITS' TO THE DESIRED NUMBER OF DIGITS OF PI      *
+C     ***********************************************************
       DIGITS=100000
       SIZE=DIGITS/4+3
 
@@ -43,9 +43,9 @@ C     COMPUTE 4 * ARCCOT(5)
   10  CARRY=0
    5  CONTINUE
 
-C 	  ***************************************
-C 	  * COMPUTE 4 * ARCCOT(5) - ARCCOT(239) *
-C 	  ***************************************
+C     ***************************************
+C     * COMPUTE 4 * ARCCOT(5) - ARCCOT(239) *
+C     ***************************************
       DO 15 I=SIZE,2,-1
       A(I)=P(I)-R239(I)
       IF(A(I).GE.0) GO TO 15
@@ -54,9 +54,9 @@ C 	  ***************************************
   15  CONTINUE
       A(1)=P(1)-R239(1)
 
-C 	  ****************************************************
-C 	  * COMPUTE PI, OR 4 * (4 * ARCCOT(5) - ARCCOT(239)) *
-C 	  ****************************************************
+C     ****************************************************
+C     * COMPUTE PI, OR 4 * (4 * ARCCOT(5) - ARCCOT(239)) *
+C     ****************************************************
       CARRY=0
       DO 20 I=SIZE,1,-1
       P(I)=4*A(I)+CARRY
@@ -67,9 +67,9 @@ C 	  ****************************************************
   25  CARRY=0
   20  CONTINUE
 
-C 	  *********************
-C	  * PRINT THE RESULTS *
-C 	  *********************
+C     *********************
+C     * PRINT THE RESULTS *
+C     *********************
       PRINT 65,'PI COMPUTED TO ',DIGITS,' DECIMAL PLACES: '
    65 FORMAT(/,5X,A,I7.2,A,/)
 
@@ -86,9 +86,9 @@ C 	  *********************
       END
       
 
-C	  **************************************
-C	  * SUBROUTINE TO COMPUTE ARC COTANGET *
-C	  **************************************
+C     **************************************
+C     * SUBROUTINE TO COMPUTE ARC COTANGET *
+C     **************************************
       SUBROUTINE ARCCOT(DIVISOR, RESULT)
       INTEGER DIVISOR
       INTEGER RESULT(100000)
@@ -160,7 +160,7 @@ C	  **************************************
       
       RETURN 
  
-C	  FINALLY, COMPUTE THE ARCCOT SERIES (SUM=SUM+/-(SIGN*TERM) ETC)
+C     FINALLY, COMPUTE THE ARCCOT SERIES (SUM=SUM+/-(SIGN*TERM) ETC)
   200 IF(SIGN.NE.1) GO TO 300
       DO 65 I = SIZE,2,-1
       SUM(I)=SUM(I)+TERM(I)
