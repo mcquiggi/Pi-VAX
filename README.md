@@ -1,5 +1,5 @@
 # Pi-VAX
-Compute Pi to an arbitrary number of digits using VAX FORTRAN
+Compute Pi to an arbitrary number of digits using VAX FORTRAN.  Why, you ask?  Why not?
 
 Set DIGITS in the source file PI.FOR to the number of digits desired.  
 
