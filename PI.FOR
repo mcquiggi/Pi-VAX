@@ -16,8 +16,8 @@ C     MODIFICATION OF ORIGINAL PL/I PROGRAM
 
 C	  ***********************************************************
 C	  * SETUP - SET DESIRED NUMBER OF DIGITS                    *
-C   *                                                         *
-C   * SET 'DIGITS' TO THE DESIRED NUMBER OF DIGITS OF PI      *
+C         *                                                         *
+C         * SET 'DIGITS' TO THE DESIRED NUMBER OF DIGITS OF PI      *
 C	  ***********************************************************
       DIGITS=100000
       SIZE=DIGITS/4+3
@@ -102,8 +102,6 @@ C	  **************************************
  
       INTEGER Q, R, X, N, SIGN
             
-c      PRINT *,'IN ARCCOT: DIVISOR = ',DIVISOR
-
       DO 5 I=1,SIZE
    5  A(I)=0
       A(1)=1
@@ -112,7 +110,6 @@ c      PRINT *,'IN ARCCOT: DIVISOR = ',DIVISOR
       Q=A(I)/DIVISOR
       R=MOD(A(I), DIVISOR)
       RESULT(I)=Q
-C      PRINT *,'LOOP 15, Q=',Q,' R=',R
       IF(I.GE.SIZE) GO TO 15 
       A(I+1)=A(I+1)+R*10000
   15  CONTINUE          
@@ -125,17 +122,14 @@ C      PRINT *,'LOOP 15, Q=',Q,' R=',R
       N=3
       SIGN=-1                                                          
       X=DIVISOR*DIVISOR
-C      PRINT *,'X =',X
    
  100  DO 25 I=1,SIZE
   25  A(I)=XPOWER(I)
       
       DO 30 I = 1,SIZE
-C      PRINT *, 'LOOP 30: I = ',I, 'A(I) = ', A(I), 'X = ', X
       Q=A(I)/X
       R=MOD(A(I), X)
       RESULT(I)=Q
-C      PRINT *,'LOOP 30, Q=',Q,' R=',R
       IF(I.GE.SIZE) GO TO 30
       A(I+1)=A(I+1)+R*10000
   30  CONTINUE	
@@ -150,7 +144,6 @@ C      PRINT *,'LOOP 30, Q=',Q,' R=',R
       Q=A(I)/N
       R=MOD(A(I), N)
       RESULT(I)=Q
-C      PRINT *,'LOOP 45, Q=',Q,' R=',R
       IF(I.GE.SIZE) GO TO 45
       A(I+1)=A(I+1)+R*10000
   45  CONTINUE	
