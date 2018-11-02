@@ -5,8 +5,8 @@ Set DIGITS in the source file PI.FOR to the number of digits desired.
 
 To compile/link under VMS:
 
-$ FORTRAN/LIS PI.FOR
-$ LINK PI
+  $ FORTRAN/LIS PI.FOR
+  $ LINK PI
 
 And to run it, just:
 
